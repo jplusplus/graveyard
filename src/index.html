@@ -19,7 +19,7 @@
     <!-- endinject -->
     <!-- endbuild -->
   </head>
-  <body  ng-controller="MainController as main">
+  <body ng-class="{ 'body--has-overlay': main.is_selected }" ng-controller="MainController as main">
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -59,7 +59,9 @@
                 <p>{{ main.selected.comment }}</p>
                 <p>Why it failed: <strong>{{ main.selected.failure_reason }}<strong></p>
                 <p class="lead">
-                  <a href="{{ main.selected.url }}">{{ main.selected.url.replace('http://', '').replace('https://', '') |  characters:40 }}</a>
+                  <a href="{{ main.selected.url }}" target="_blank">
+                    {{ main.selected.url.replace('http://', '').replace('https://', '') |  characters:40 }}
+                  </a>
                 </p>
             </div>
             <div class="col-md-6">
