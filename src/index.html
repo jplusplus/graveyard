@@ -28,7 +28,10 @@
       <div class="container">
         <div class="main__hero ">
           <h1 class="main__hero__title">In memory of our glorious apps</h1>
-          <p class="main__hero__lead">Journalism++ remembers thankfully the many projects that did not live to see this day.</p>
+          <p class="main__hero__lead">
+            <a href="http://jplusplus.org" target="_blank">Journalism++</a> remembers thankfully
+            the many projects that did not live to see this day.
+          </p>
         </div>
 
         <div class="main__projects">
@@ -55,7 +58,7 @@
           <div class="row">
             <div class="col-md-6">
                 <h1>{{ main.selected.name }}</h1>
-                <p class="lead">{{ main.selected.birth }} - {{ main.selected.death }}</p>
+                <p class="lead">❦ {{ main.selected.birth }} - {{ main.selected.death }}</p>
                 <p>{{ main.selected.comment }}</p>
                 <p>Why it failed: <strong>{{ main.selected.failure_reason }}<strong></p>
                 <p class="lead">
