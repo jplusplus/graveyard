@@ -14,11 +14,102 @@
     margin:100px 0;
 
     &__single {
-      background: white;
-      color: contrast(@brand-primary);
-      height: 400px;
+      cursor: pointer;
+      background: #000;
+      color: #fff;
+      height: 300px;
       padding: 30px;
       margin-bottom:@grid-gutter-width;
+      position: relative;
+      overflow: hidden;
+
+      &__body {
+        position: relative;
+        z-index:20;
+        text-align: center;
+
+        &__wreath {
+          font-size:3em;
+        }
+
+        &__overlay {
+          background:fade(black, 70);
+          color:#fff;
+          position:absolute;
+          top:0;
+          left:0;
+          bottom:0;
+          right:0;
+          z-index:20;
+          text-align: center;
+          line-height: 300px;
+          font-size:5em;
+          opacity:0;
+          .transition(0.4s);
+          &:hover {
+            opacity:1;
+          }
+        }
+
+      }
+
+
+      &:after {
+        content:"";
+        position:absolute;
+        top:0;
+        left:0;
+        bottom:0;
+        right:0;
+        z-index:10;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */
+        background: -moz-linear-gradient(-45deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(-45deg, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(-45deg, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(-45deg, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+        background: linear-gradient(135deg, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+      }
+
+
+    }
+  }
+
+  &__selected  {
+    z-index:1000;
+    background:white;
+    color: #222;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    padding:300px 0;
+    opacity:1;
+
+    .transition(0.7s);
+
+    &.ng-hide,
+    &.ng-hide.ng-hide-active {
+      opacity:0;
+    }
+
+    &__close {
+      position:absolute;
+      top:30px;
+      right:30px;
+      font-size:4em;
+      font-family:@font-family-monospace;
+      color:black;
+      padding:0;
+      line-height:30px;
+      display: block;
+      &:hover {
+        color:black;
+        cursor:pointer;
+        text-decoration:none;
+      }
     }
   }
 }

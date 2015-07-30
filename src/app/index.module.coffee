@@ -1,1 +1,1 @@
-angular.module 'graveyard', ['ngAnimate', 'ngTouch', 'ngSanitize']
+angular.module 'graveyard', ['ngAnimate', 'ngTouch', 'ngSanitize', 'truncate']
