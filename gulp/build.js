@@ -102,3 +102,10 @@ gulp.task('clean', function (done) {
 });
 
 gulp.task('build', ['html', 'fonts', 'other', 'csv']);
+
+
+gulp.task('deploy', ['build'], function() {
+  return gulp.src("./dist/**/*").pipe($.ghPages({
+    remoteUrl: "git@github.com:jplusplus/graveyard.git"
+  }));
+});
