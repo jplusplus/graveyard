@@ -1,4 +1,4 @@
-# pirhoo.com (v2)
+# Dead projects by Journalism++
 
 ## Installation
 
